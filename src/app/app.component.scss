@@ -1,52 +1,71 @@
-.container {
+.top {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 2rem;
+  background-color: #35000e;
+  z-index: 2;
+  opacity: 90%;
+  border-bottom-style: solid;
+}
+
+a {
+  text-decoration: none;
+  color: #3391ff;
+  cursor: pointer;
+
+  &:visited {
+    color: #3391ff;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.link {
+  border-radius: 2px;
+  padding: 1px 10px 1px 10px;
+}
+
+.video-container {
   position: relative;
 }
 
 #video {
   width: 100%;
-  height: auto;
   opacity: 0.5;
 }
 
-.center2 {
+.center-name {
   position: absolute;
   top: 50%;
   width: 100%;
   text-align: center;
 }
 
-.center3 {
+.center-title {
   position: absolute;
   top: 60%;
   width: 100%;
   text-align: center;
-}
-
-.top {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.link {
-  border-radius: 2px;
-  padding: 1px 10px 1px 10px;
-  text-decoration: none;
-}
-
-.aboutLink:hover {
-  padding-right: 25px;
+  @media (orientation: portrait) {
+    top: 70%;
+  }
 }
 
 .above {
   z-index: 1;
-  text-shadow: 0 0 2px #000;
+  text-shadow: 0 0 10px #000;
 }
 
 .center {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .section {
@@ -54,35 +73,61 @@
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  @media only screen and (max-width: 80rem) {
-    height: 80vh;
-  }
-  @media only screen and (max-width: 70rem) {
-    height: 70vh;
-  }
-  @media only screen and (max-width: 60rem) {
-    height: 60vh;
-  }
-  @media only screen and (max-width: 50rem) {
-    height: 50vh;
-  }
-  @media only screen and (max-width: 40rem) {
-    height: 40vh;
-  }
+  width: 100%;
 }
 
 .flex-50 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  @media (orientation: portrait) {
+    flex-wrap: wrap;
+  }
+}
+
+.overlay {
+  z-index: 2;
+  width: 80%;
+  height: 80%;
+  background-color: #35000e;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  top: 10%;
+  left: 10%;
+  border-radius: 15px;
+}
+
+.position {
+  border-style: dashed;
+  width: 40%;
+  margin: 1rem 0;
+  @media (orientation: portrait) {
+    width: 50%;
+  }
+}
+
+.no-margin {
+  margin: 0;
 }
 
 .about {
   width: 40%;
+  @media (orientation: portrait) {
+    width: 60%;
+    padding-bottom: 10%;
+  }
 }
 
 .selfie {
   width: 20%;
+  border-radius: 15px;
+  @media (orientation: portrait) {
+    width: 50%;
+  }
 }
 
 .logo {
@@ -97,8 +142,9 @@
 .oneCard {
   perspective: 150rem;
   height: 10rem;
-  width: 10rem;
+  width: 20rem;
   position: relative;
+  padding: 10% 0;
 
   &__side {
     display: flex;
@@ -109,14 +155,16 @@
     top: 0;
     left: 0;
     height: 10rem;
-    width: 10rem;
+    width: 20rem;
     transition: all 1s ease;
     backface-visibility: hidden;
   }
 
   &__front {
     transform: rotateY(0);
-    background-color: green;
+    border-style: solid;
+    border-color: orangered;
+    border-radius: 15px;
   }
 
   &:hover &__front {
@@ -126,11 +174,17 @@
 
   &__back {
     transform: rotateY(180deg);
-    background-color: yellow;
+    border-style: solid;
+    border-color: orangered;
+    border-radius: 15px;
   }
 
   &:hover &__back {
     transition: all 1s ease;
     transform: rotateY(0);
   }
+}
+
+.credits {
+  padding-top: 1rem;
 }

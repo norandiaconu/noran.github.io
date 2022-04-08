@@ -1,35 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: #131516;
-    color: orangered;
-    font-family: 'Comfortaa', cursive;
-    display: flex;
-    justify-content: center;
+  background-color: #131516;
+  color: orangered;
+  font-family: "Comfortaa", cursive;
+  margin: 0;
 }
 
-/* width */
 ::-webkit-scrollbar {
-    width: 15px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #000000;
-    border-radius: 10px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #777;
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

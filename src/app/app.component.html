@@ -10,12 +10,17 @@
   </a>
 </div>
 
-<div class="container">
-  <video autoplay muted loop id="video">
-    <source src="assets/mixkit-clouds-and-blue-sky-2408.mp4" type="video/mp4" />
-  </video>
-  <h1 class="center2 above">NORAN DIACONU</h1>
-  <h3 class="center3 above">Angular Software Developer</h3>
+<div class="video-container">
+  <video
+    src="assets/mixkit-clouds-and-blue-sky-2408.mp4"
+    type="video/mp4"
+    loop
+    autoplay
+    [muted]="true"
+    id="video"
+  ></video>
+  <h1 class="center-name above">NORAN DIACONU</h1>
+  <h3 class="center-title above">Angular Software Developer</h3>
 </div>
 
 <div class="section" id="about">
@@ -36,11 +41,11 @@
   <div class="flex-50">
     <div class="oneCard">
       <div class="oneCard__side oneCard__front">
-        <h3 class="center">Resume</h3>
+        <h3 class="center">Work Experience</h3>
       </div>
       <div class="oneCard__side oneCard__back">
         <div class="center">
-          <a href="#">
+          <a (click)="toggle()">
             <h3>View here</h3>
           </a>
         </div>
@@ -52,12 +57,46 @@
       </div>
       <div class="oneCard__side oneCard__back">
         <div class="center">
-          <a href="#">
-            <h3>View here</h3>
+          <a href="https://github.com/norandiaconu">
+            <h3>View GitHub</h3>
           </a>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="overlay" *ngIf="display" [@fade]>
+  <a (click)="toggle()">Close</a>
+  <div class="position">
+    <h4 class="no-margin">Angular Application Developer</h4>
+    <h5 class="no-margin">Aflac</h5>
+    <h6 class="no-margin">Current</h6>
+  </div>
+  <div class="position">
+    <h4 class="no-margin">Angular Developer</h4>
+    <h5 class="no-margin">Empowered Benefits, LLC [acquired by Aflac in 2022]</h5>
+    <h6 class="no-margin">Feb 2021 - Jan 2022</h6>
+  </div>
+  <div class="position">
+    <h4 class="no-margin">Java Developer</h4>
+    <h5 class="no-margin">Empowered Benefits, LLC [acquired by Aflac in 2022]</h5>
+    <h6 class="no-margin">Oct 2019 - Feb 2021</h6>
+  </div>
+  <div class="position">
+    <h4 class="no-margin">Software Developer</h4>
+    <h5 class="no-margin">RapidCourt</h5>
+    <h6 class="no-margin">Oct 2017 - Sept 2019</h6>
+  </div>
+  <div class="position">
+    <h4 class="no-margin">IT Manager</h4>
+    <h5 class="no-margin">Bright Audio Video</h5>
+    <h6 class="no-margin">Jan 2017 - Sept 2017</h6>
+  </div>
+  <div class="position">
+    <h4 class="no-margin">Classroom Support Technician</h4>
+    <h5 class="no-margin">Appalachian State University</h5>
+    <h6 class="no-margin">Jul 2013 - Dec 2016</h6>
   </div>
 </div>
 
@@ -69,7 +108,7 @@
       alt="Gmail logo"
       class="logo"
     />
-    <div>Email:&nbsp;</div>
+    <div>&nbsp;Email:&nbsp;</div>
     <a href="mailto: norandiaconu@gmail.com">norandiaconu@gmail.com</a>
   </h3>
   <h3 class="center">
@@ -78,7 +117,7 @@
       alt="LinkedIn logo"
       class="logo"
     />
-    <div>LinkedIn:&nbsp;</div>
+    <div>&nbsp;LinkedIn:&nbsp;</div>
     <a href="https://www.linkedin.com/in/noran-diaconu">noran.linkedin</a>
   </h3>
 </div>
@@ -87,8 +126,6 @@
   <img src="assets/circle-up.svg" class="logo2" />
 </a>
 
-<div class="content" role="main">
-  <a (click)="toggle()" style="cursor: pointer">View Resume</a>
+<div class="credits">
+  Credits to https://mixkit.co/ for the video and https://icomoon.io/ for the icons
 </div>
-
-<div>Credits to https://mixkit.co/ for the video and https://icomoon.io/ for the icons</div>
