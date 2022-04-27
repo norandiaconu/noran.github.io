@@ -19,11 +19,39 @@
 <div class="section" id="about">
     <div *ngIf="aboutVisible" [@fade]>
         <h2 class="center">About Me</h2>
-        <div class="flex-50">
+        <div class="center">Experienced developer with a demonstrated history of working in the computer software industry.</div>
+        <div class="center">Fluent in Romanian with a working proficiency in Spanish.</div>
+        <div class="flex-50-2">
             <div class="about">
-                Experienced developer with a demonstrated history of working in the computer software industry. Skilled in areas such as
-                Angular, Java, HTML, SCSS, JavaScript, SQL, Educational Technology, and Technical Support. Fluent in Romanian with a working
-                proficiency in Spanish.
+                <div class="skills">
+                    <div class="hexagon" *ngIf="angularVisible" [@slide-right]>
+                        <div class="center-skill">Angular</div>
+                    </div>
+                    <div class="hexagon" *ngIf="javaVisible" [@slide-right]>
+                        <div class="center-skill">Java</div>
+                    </div>
+                    <div class="hexagon" *ngIf="htmlVisible" [@slide-right]>
+                        <div class="center-skill">HTML</div>
+                    </div>
+                    <div class="hexagon" *ngIf="scssVisible" [@slide-right]>
+                        <div class="center-skill">SCSS</div>
+                    </div>
+                    <div class="hexagon" *ngIf="javascriptVisible" [@slide-right]>
+                        <div class="center-skill">JavaScript</div>
+                    </div>
+                    <div class="hexagon" *ngIf="nodeVisible" [@slide-right]>
+                        <div class="center-skill">Node.js</div>
+                    </div>
+                    <div class="hexagon" *ngIf="sqlVisible" [@slide-right]>
+                        <div class="center-skill">SQL</div>
+                    </div>
+                    <div class="hexagon" *ngIf="educationalVisible" [@slide-right]>
+                        <div class="center-skill">Educational Technology</div>
+                    </div>
+                    <div class="hexagon" *ngIf="technicalVisible" [@slide-right]>
+                        <div class="center-skill">Technical Support</div>
+                    </div>
+                </div>
             </div>
             <img src="assets/20161018_184702.jpg" class="selfie" />
         </div>
@@ -55,6 +83,22 @@
                         <a href="https://github.com/norandiaconu" target="_blank">
                             <h3>View GitHub</h3>
                         </a>
+                    </div>
+                </div>
+            </div>
+            <div class="oneCard">
+                <div class="oneCard__side oneCard__front">
+                    <h3 class="center">Education</h3>
+                </div>
+                <div class="oneCard__side oneCard__back">
+                    <div class="center2">
+                        <h3 class="margin2">Appalachian State</h3>
+                        <h3 class="margin2">University</h3>
+                        <h3 class="margin2">(2009)</h3>
+                        <div>&nbsp;</div>
+                        <h4 class="margin2">Bachelor of Science</h4>
+                        <h5 class="margin2">Computer Science</h5>
+                        <h5 class="margin2">Minor - Mathematics</h5>
                     </div>
                 </div>
             </div>
@@ -116,4 +160,12 @@
     <img src="assets/circle-up.svg" />
 </a>
 
-<div class="credits">Credits to mixkit.co for the video and icomoon.io for the icons</div>
+<div class="overlay" *ngIf="displayCredits" [@fade]>
+    <a (click)="toggleCredits()" class="top-right">
+        <img src="assets/cross.svg" />
+    </a>
+    <div>Credits to mixkit.co for the video and icomoon.io for the icons</div>
+</div>
+<a (click)="toggleCredits()">
+    <h3>Credits</h3>
+</a>

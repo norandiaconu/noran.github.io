@@ -6,16 +6,31 @@ import { Component, HostListener } from "@angular/core";
     templateUrl: "./app.component.html",
     styleUrls: ["./app.component.scss"],
     animations: [
-        trigger("fade", [
-            transition(":enter", [style({ opacity: 0 }), animate("0.5s ease-out", style({ opacity: 1 }))]),
-            transition(":leave", [style({ opacity: 1 }), animate("0.5s ease-in", style({ opacity: 0 }))]),
+        trigger("fade", [transition(":enter", [style({ opacity: 0 }), animate("0.5s ease-out", style({ opacity: 1 }))])]),
+        trigger("slide-right", [
+            transition(":enter", [
+                style({ transform: "translateX(-100%)" }),
+                animate("0.5s ease-out", style({ transform: "translateX(0)" })),
+            ]),
         ]),
     ],
 })
 export class AppComponent {
     title = "noran-github-io";
     display = false;
+    displayCredits = false;
     aboutVisible = false;
+
+    angularVisible = false;
+    javaVisible = false;
+    htmlVisible = false;
+    scssVisible = false;
+    javascriptVisible = false;
+    nodeVisible = false;
+    sqlVisible = false;
+    educationalVisible = false;
+    technicalVisible = false;
+
     experienceVisible = false;
     contactVisible = false;
 
@@ -23,11 +38,18 @@ export class AppComponent {
         this.display = !this.display;
     }
 
+    toggleCredits(): void {
+        this.displayCredits = !this.displayCredits;
+    }
+
     @HostListener("window:scroll")
     scroll() {
         if (window.innerWidth > window.innerHeight) {
             if (window.scrollY > window.innerHeight * 0.7) {
                 this.aboutVisible = true;
+            }
+            if (window.scrollY > window.innerHeight * 1.0) {
+                this.showSkills();
             }
             if (window.scrollY > window.innerHeight * 1.7) {
                 this.experienceVisible = true;
@@ -39,6 +61,9 @@ export class AppComponent {
             if (window.scrollY > window.innerHeight * 0.3) {
                 this.aboutVisible = true;
             }
+            if (window.scrollY > window.innerHeight * 0.5) {
+                this.showSkills();
+            }
             if (window.scrollY > window.innerHeight * 1.1) {
                 this.experienceVisible = true;
             }
@@ -46,5 +71,30 @@ export class AppComponent {
                 this.contactVisible = true;
             }
         }
+    }
+
+    delay(): Promise<void> {
+        return new Promise((resolve) => setTimeout(resolve, 500));
+    }
+
+    async showSkills(): Promise<void> {
+        await this.delay();
+        this.angularVisible = true;
+        await this.delay();
+        this.javaVisible = true;
+        await this.delay();
+        this.htmlVisible = true;
+        await this.delay();
+        this.scssVisible = true;
+        await this.delay();
+        this.javascriptVisible = true;
+        await this.delay();
+        this.nodeVisible = true;
+        await this.delay();
+        this.sqlVisible = true;
+        await this.delay();
+        this.educationalVisible = true;
+        await this.delay();
+        this.technicalVisible = true;
     }
 }
