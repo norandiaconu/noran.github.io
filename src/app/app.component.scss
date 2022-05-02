@@ -1,6 +1,6 @@
-$primary-color: orangered;
-$secondary-color: #35000e;
-$link-color: #3391ff;
+$primary-color: #4ea5d9;
+$secondary-color: #103c56;
+$link-color: orangered;
 
 .top {
     width: 100%;
@@ -14,6 +14,7 @@ $link-color: #3391ff;
     z-index: 2;
     opacity: 90%;
     border-bottom-style: solid;
+    font-weight: 500;
 }
 
 a {
@@ -70,6 +71,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .section {
@@ -128,7 +130,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.5rem;
+
     @media (orientation: portrait) {
         width: 50%;
     }
@@ -173,19 +175,6 @@ a {
     padding-top: 2rem;
 }
 
-.skill {
-    border-style: solid;
-    border-color: $primary-color;
-    border-radius: 15px;
-    flex: 1 0 5%;
-    padding: 1rem;
-    margin: 1rem;
-    @media (orientation: portrait) {
-        padding: 0;
-        margin: 0;
-    }
-}
-
 .hexagon {
     background: $primary-color;
     clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
@@ -193,7 +182,6 @@ a {
     width: 8rem;
     color: black;
     position: relative;
-    display: flex;
     margin-right: 1rem;
 }
 
@@ -260,9 +248,10 @@ a {
 .center2 {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: 20rem;
+    color: orangered;
 }
 
 .margin2 {
@@ -284,6 +273,10 @@ a {
     padding: 0 2rem;
     border-radius: 10px;
     margin-bottom: 1rem;
+}
+
+footer {
+    padding-left: 1rem;
 }
 
 .credits {
